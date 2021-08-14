@@ -24,4 +24,5 @@ jobs:
       - name: run
         run: |
           pip install requests
+          cd gat
           ./bash.sh
