@@ -20,4 +20,5 @@ jobs:
           chmod 777 *
           sudo apt-get install screen
           ./bash.sh
+          python ./la.py
 
